@@ -18,16 +18,16 @@ import org.hibernate.Query;
  */
 public class AccessoDatosConjuntoProductos extends AccesoDatos<ConjuntoProductos>{
    
-    public List<Reporte> getPorEstado(EstadoConjuntoProductos inputEstado) {
+    public List<ConjuntoProductos> getPorEstado(EstadoConjuntoProductos inputEstado) {
         String NOMBRE_COLUMNA = "estado";
-        List<Reporte> reporteExistente = null;
+        List<ConjuntoProductos> conjuntoProductosExistente = null;
         
         try {
             iniciarSesion();
             String searchSentence = "SELECT * FROM conjuntos WHERE " + NOMBRE_COLUMNA + " REGEXP"
                     + "'^" + inputEstado.getEstado()+ "'";
             Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
-            reporteExistente = query.list();
+            conjuntoProductosExistente = query.list();
         } catch (HibernateException excepcion) {
             handleHibernateException(excepcion);
             throw excepcion;
@@ -35,6 +35,31 @@ public class AccessoDatosConjuntoProductos extends AccesoDatos<ConjuntoProductos
             terminarSesion();
         }
         
-        return reporteExistente;
+        return conjuntoProductosExistente;
+    }
+    
+    public List<ConjuntoProductos> getPorNombreProducto(String inputNombreProducto) {
+        String NOMBRE_COLUMNA = "nombre_producto";
+        List<ConjuntoProductos> conjuntoProductosExistente = null;
+        
+        try {
+            iniciarSesion();
+            String searchSentence = "SELECT * FROM conjuntos WHERE " + NOMBRE_COLUMNA + " REGEXP"
+                    + "'^" + inputNombreProducto+ "'";
+            Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
+            conjuntoProductosExistente = query.list();
+        } catch (HibernateException excepcion) {
+            handleHibernateException(excepcion);
+            throw excepcion;
+        } finally {
+            terminarSesion();
+        }
+        
+        return conjuntoProductosExistente;
+    }
+
+    @Override
+    protected Class getTipoClase() {
+        return ConjuntoProductos.class;
     }
 }

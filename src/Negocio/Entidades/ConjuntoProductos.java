@@ -5,7 +5,7 @@
  */
 package Negocio.Entidades;
 
-import Negocio.Entidades.Enums.EstadoConjuntoProductos;
+import Negocio.Entidades.Enums.EstadoConjuntoProd;
 
 /**
  *
@@ -15,11 +15,11 @@ public class ConjuntoProductos {
     private int id;
     private Producto producto;
     private int cantidad;
-    private EstadoConjuntoProductos estado;
+    private EstadoConjuntoProd estado;
 
     public ConjuntoProductos(
             Producto producto,
-            EstadoConjuntoProductos estado,
+            EstadoConjuntoProd estado,
             int cantidad
     )  {
         this.producto = producto;
@@ -51,11 +51,11 @@ public class ConjuntoProductos {
         this.cantidad = cantidad;
     }
 
-    public EstadoConjuntoProductos getEstado() {
+    public EstadoConjuntoProd getEstado() {
         return estado;
     }
 
-    public void setEstado(EstadoConjuntoProductos estado) {
+    public void setEstado(EstadoConjuntoProd estado) {
         this.estado = estado;
     }
     

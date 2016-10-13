@@ -16,7 +16,7 @@ import org.hibernate.Query;
  *
  * @author DEMON
  */
-public class AcessoDatosProductos extends AccesoDatos<Producto>{
+public class AccesoDatosProd extends AccesoDatos<Producto>{
      
     public List<Producto> getPorNombre(String inputNombre) {
         String NOMBRE_COLUMNA = "nombre";
@@ -24,9 +24,9 @@ public class AcessoDatosProductos extends AccesoDatos<Producto>{
         
         try {
             iniciarSesion();
-            String searchSentence = "SELECT * FROM productos WHERE " + NOMBRE_COLUMNA + " REGEXP"
+            String SentenciaBusqueda = "SELECT * FROM productos WHERE " + NOMBRE_COLUMNA + " REGEXP"
                     + "'^" + inputNombre + "'";
-            Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
+            Query query = sesion.createSQLQuery(SentenciaBusqueda).addEntity(getTipoClase());
             productoExistente = query.list();
         } catch (HibernateException excepcion) {
             handleHibernateException(excepcion);

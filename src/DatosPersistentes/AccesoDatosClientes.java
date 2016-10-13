@@ -25,9 +25,9 @@ public class AccesoDatosClientes extends AccesoDatos<Cliente>  {
         
         try {
             iniciarSesion();
-            String searchSentence = "SELECT * FROM clientes WHERE " + NOMBRE_COLUMNA + " REGEXP"
+            String SentenciaBusqueda = "SELECT * FROM clientes WHERE " + NOMBRE_COLUMNA + " REGEXP"
                     + "'^" + inputNombre + "'";
-            Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
+            Query query = sesion.createSQLQuery(SentenciaBusqueda).addEntity(getTipoClase());
             clienteExistente = query.list();
         } catch (HibernateException exception) {
             handleHibernateException(exception);

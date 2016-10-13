@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="Negocio.Entidades.Cliente" table="clientes"/>
+      <class name="Negocio.Entidades.Cliente" table="clientes">
+          <id column="id" name="id" type="int">
+              <generator class="native"/>
+          </id>
+          <property column="nombre" name="nombre" type="string"/>
+          <property column="telefono" name="telefono" type="string"/>
+          <property column="celular" name="celular" type="string"/>
+          <property column="direccion" name="direccion" type="string"/>
+      </class>
 </hibernate-mapping>

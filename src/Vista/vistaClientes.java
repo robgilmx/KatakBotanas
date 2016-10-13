@@ -24,13 +24,13 @@ public class vistaClientes extends javax.swing.JFrame {
     
     private javax.swing.JScrollPane AdminClientesScrollPanel;
     private javax.swing.JButton BotonBorrar;
-    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton BotonAgregar;
     private javax.swing.JButton BotonEditar;
     private javax.swing.JTable TablaListaClientes;
     private javax.swing.JScrollPane patientListScrollPane;
     
     private javax.swing.JButton BotonCancelar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton BotonGuardar;
     private javax.swing.JTextField DireccionTextField;
     private javax.swing.JLabel LabelDireccion;
     private javax.swing.JLabel LabelNombre;
@@ -62,7 +62,7 @@ public class vistaClientes extends javax.swing.JFrame {
         
         cl.show(panelBase, "1");
         
-        btnAgregar.addActionListener(new ActionListener(){
+        BotonAgregar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(panelBase, "2");
@@ -70,7 +70,15 @@ public class vistaClientes extends javax.swing.JFrame {
             
         });
         
-        btnGuardar.addActionListener(new ActionListener() {
+        BotonEditar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(panelBase, "2");
+            }
+            
+        });
+        
+        BotonGuardar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(panelBase, "1");
@@ -82,7 +90,7 @@ public class vistaClientes extends javax.swing.JFrame {
     
     private void inicializarPanelPrincipal(){
         panelPrincipal = new javax.swing.JPanel();
-        btnAgregar = new javax.swing.JButton();
+        BotonAgregar = new javax.swing.JButton();
         BotonEditar = new javax.swing.JButton();
         BotonBorrar = new javax.swing.JButton();
         AdminClientesScrollPanel = new javax.swing.JScrollPane();
@@ -92,7 +100,7 @@ public class vistaClientes extends javax.swing.JFrame {
 
         panelPrincipal.setBorder(javax.swing.BorderFactory.createTitledBorder("Administrar Clientes"));
 
-        btnAgregar.setText("Agregar");
+        BotonAgregar.setText("Agregar");
 
         BotonEditar.setText("Editar");
 
@@ -117,28 +125,26 @@ public class vistaClientes extends javax.swing.JFrame {
 
         javax.swing.GroupLayout AdminClientesPanelLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(AdminClientesPanelLayout);
-        AdminClientesPanelLayout.setHorizontalGroup(
-            AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        AdminClientesPanelLayout.setHorizontalGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminClientesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AdminClientesScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AdminClientesPanelLayout.createSequentialGroup()
-                        .addComponent(btnAgregar)
+                        .addComponent(BotonAgregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonBorrar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        AdminClientesPanelLayout.setVerticalGroup(
-            AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        AdminClientesPanelLayout.setVerticalGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminClientesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(AdminClientesScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar)
+                    .addComponent(BotonAgregar)
                     .addComponent(BotonEditar)
                     .addComponent(BotonBorrar))
                 .addContainerGap())
@@ -157,7 +163,7 @@ public class vistaClientes extends javax.swing.JFrame {
         DireccionTextField = new javax.swing.JTextField();
         TelefonoTextField = new javax.swing.JTextField();
         NombreTextField = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
+        BotonGuardar = new javax.swing.JButton();
         BotonCancelar = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
@@ -174,7 +180,7 @@ public class vistaClientes extends javax.swing.JFrame {
 
         LabelTelefono.setText("Telefono");
 
-        btnGuardar.setText("Guardar");
+        BotonGuardar.setText("Guardar");
         
         BotonCancelar.setText("Cancelar");
 
@@ -198,7 +204,7 @@ public class vistaClientes extends javax.swing.JFrame {
                         .addComponent(NombreTextField))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DatosClientePanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnGuardar)
+                        .addComponent(BotonGuardar)
                         .addGap(31, 31, 31)
                         .addComponent(BotonCancelar)))
                 .addContainerGap())
@@ -219,7 +225,7 @@ public class vistaClientes extends javax.swing.JFrame {
                     .addComponent(TelefonoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
+                    .addComponent(BotonGuardar)
                     .addComponent(BotonCancelar))
                 .addContainerGap())
         );

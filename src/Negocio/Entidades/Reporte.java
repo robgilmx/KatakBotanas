@@ -19,13 +19,13 @@ public class Reporte {
     private String tipo;
     private String nombreCliente;
     private Date fechaRegistro;
-    private List<Producto> productosVendidos;
+    private List<ConjuntoProductos> productosVendidos;
     private Date fechaPedido;
     
     public Reporte(
             String nombreCliente, 
             Date fechaRegistro, 
-            List<Producto> productosVendidos, 
+            List<ConjuntoProductos> productosVendidos, 
             Date fechaPedido
     ) {
         this.nombreCliente = nombreCliente;
@@ -37,7 +37,7 @@ public class Reporte {
 
     public Reporte(
             Cliente cliente, 
-            List<Producto> productosVendidos, 
+            List<ConjuntoProductos> productosVendidos, 
             Date fechaRegistro
     ) {
         this.nombreCliente = cliente.getNombre();
@@ -70,11 +70,11 @@ public class Reporte {
         this.nombreCliente = nombreCliente;
     }
 
-    public List<Producto> getProductosVendidos() {
+    public List<ConjuntoProductos> getProductosVendidos() {
         return productosVendidos;
     }
 
-    public void setProductosVendidos(List<Producto> productosVendidos) {
+    public void setProductosVendidos(List<ConjuntoProductos> productosVendidos) {
         this.productosVendidos = productosVendidos;
     }
 

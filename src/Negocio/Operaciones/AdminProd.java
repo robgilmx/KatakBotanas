@@ -31,4 +31,7 @@ public class AdminProd {
         return accesoDatosProd.getPorNombre(nombreProd);
     }
     
+    public List<Producto> getListaProd() {
+        return accesoDatosProd.getLista();
+    }
 }

@@ -8,6 +8,7 @@ package Vista;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -30,9 +31,7 @@ public class vistaClientes extends javax.swing.JFrame {
     
     private javax.swing.JButton BotonCancelar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JTextField CelularTextField;
     private javax.swing.JTextField DireccionTextField;
-    private javax.swing.JLabel LabelCelular;
     private javax.swing.JLabel LabelDireccion;
     private javax.swing.JLabel LabelNombre;
     private javax.swing.JLabel LabelTelefono;
@@ -40,16 +39,20 @@ public class vistaClientes extends javax.swing.JFrame {
     private javax.swing.JTextField TelefonoTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
+    
 
     /**
      * Creates new form vistaCliente
      */
     public vistaClientes() {
-        initComponents();
-        panelBase=new JPanel();
-        add(panelBase);
+        //initComponents();
+        panelBase=new JPanel();  
         cl=new CardLayout();
         panelBase.setLayout(cl);
+                      
+        panelPrincipal=new JPanel();
+        panelAgregarCliente=new JPanel();
+        
         inicializarPanelPrincipal();
         inicializarPanelAgregarCliente();
         
@@ -62,7 +65,7 @@ public class vistaClientes extends javax.swing.JFrame {
         btnAgregar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                cl.show(panelBase, "1");
+                cl.show(panelBase, "2");
             }
             
         });
@@ -73,12 +76,12 @@ public class vistaClientes extends javax.swing.JFrame {
                 cl.show(panelBase, "1");
             }
         });
-        
-        
+        add(panelBase);
+        pack();
     }
     
     private void inicializarPanelPrincipal(){
-        panelPrincipal= new javax.swing.JPanel();
+        panelPrincipal = new javax.swing.JPanel();
         btnAgregar = new javax.swing.JButton();
         BotonEditar = new javax.swing.JButton();
         BotonBorrar = new javax.swing.JButton();
@@ -94,29 +97,45 @@ public class vistaClientes extends javax.swing.JFrame {
         BotonEditar.setText("Editar");
 
         BotonBorrar.setText("Borrar");
+        
+        TablaListaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"w", "e", null},
+                {"r", "w", "w"}
+            },
+            new String [] {
+                "Nombre", "Direccion", "Telefono"
+            }
+        ));
 
         AdminClientesScrollPanel.setViewportView(TablaListaClientes);
+        if (TablaListaClientes.getColumnModel().getColumnCount() > 0) {
+            TablaListaClientes.getColumnModel().getColumn(0).setHeaderValue("Nombre");
+            TablaListaClientes.getColumnModel().getColumn(1).setHeaderValue("Direccion");
+            TablaListaClientes.getColumnModel().getColumn(2).setHeaderValue("Telefono");
+        }
 
         javax.swing.GroupLayout AdminClientesPanelLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(AdminClientesPanelLayout);
-        AdminClientesPanelLayout.setHorizontalGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        AdminClientesPanelLayout.setHorizontalGroup(
+            AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminClientesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AdminClientesScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AdminClientesPanelLayout.createSequentialGroup()
                         .addComponent(btnAgregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonBorrar)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(AdminClientesScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(BotonBorrar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        AdminClientesPanelLayout.setVerticalGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        AdminClientesPanelLayout.setVerticalGroup(
+            AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminClientesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(AdminClientesScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                .addComponent(AdminClientesScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(AdminClientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar)
@@ -125,39 +144,18 @@ public class vistaClientes extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pack();
+//        pack();
     }
     
     private void inicializarPanelAgregarCliente(){
-        java.awt.GridBagConstraints gridBagConstraints;
-
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         panelAgregarCliente = new javax.swing.JPanel();
         LabelNombre = new javax.swing.JLabel();
         LabelDireccion = new javax.swing.JLabel();
         LabelTelefono = new javax.swing.JLabel();
-        LabelCelular = new javax.swing.JLabel();
         DireccionTextField = new javax.swing.JTextField();
         TelefonoTextField = new javax.swing.JTextField();
-        CelularTextField = new javax.swing.JTextField();
         NombreTextField = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         BotonCancelar = new javax.swing.JButton();
@@ -176,12 +174,13 @@ public class vistaClientes extends javax.swing.JFrame {
 
         LabelTelefono.setText("Telefono");
 
-        LabelCelular.setText("Celular");
+        btnGuardar.setText("Guardar");
+        
+        BotonCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout DatosClientePanelLayout = new javax.swing.GroupLayout(panelAgregarCliente);
         panelAgregarCliente.setLayout(DatosClientePanelLayout);
-        DatosClientePanelLayout.setHorizontalGroup(
-            DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DatosClientePanelLayout.setHorizontalGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DatosClientePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,14 +196,14 @@ public class vistaClientes extends javax.swing.JFrame {
                         .addComponent(LabelNombre)
                         .addGap(9, 9, 9)
                         .addComponent(NombreTextField))
-                    .addGroup(DatosClientePanelLayout.createSequentialGroup()
-                        .addComponent(LabelCelular)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CelularTextField)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DatosClientePanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnGuardar)
+                        .addGap(31, 31, 31)
+                        .addComponent(BotonCancelar)))
                 .addContainerGap())
         );
-        DatosClientePanelLayout.setVerticalGroup(
-            DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DatosClientePanelLayout.setVerticalGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DatosClientePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -218,41 +217,12 @@ public class vistaClientes extends javax.swing.JFrame {
                 .addGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelTelefono)
                     .addComponent(TelefonoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(DatosClientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCelular)
-                    .addComponent(CelularTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        
-        btnGuardar.setText("Guardar");
-        BotonCancelar.setText("Cancelar");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonCancelar)
-                .addGap(39, 39, 39))
-        );
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(BotonCancelar))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap())
         );
-
-        pack();
     }
 
     /**
@@ -270,11 +240,11 @@ public class vistaClientes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 301, Short.MAX_VALUE)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 182, Short.MAX_VALUE)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
         pack();

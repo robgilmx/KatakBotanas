@@ -5,6 +5,7 @@
  */
 package Negocio.Entidades;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 /**
@@ -17,13 +18,13 @@ public class Reporte {
     private int id;
     private String tipo;
     private String nombreCliente;
-    private ArrayList<Producto> productosVendidos;
+    private List<Producto> productosVendidos;
     private Date fechaRegistro;
     private Date fechaPedido;
-
+    
     public Reporte(
             String nombreCliente, 
-            ArrayList<Producto> productosVendidos, 
+            List<Producto> productosVendidos, 
             Date fechaRegistro, 
             Date fechaPedido
     ) {
@@ -36,7 +37,7 @@ public class Reporte {
 
     public Reporte(
             Cliente cliente, 
-            ArrayList<Producto> productosVendidos, 
+            List<Producto> productosVendidos, 
             Date fechaRegistro
     ) {
         this.nombreCliente = cliente.getNombre();
@@ -69,11 +70,11 @@ public class Reporte {
         this.nombreCliente = nombreCliente;
     }
 
-    public ArrayList<Producto> getProductosVendidos() {
+    public List<Producto> getProductosVendidos() {
         return productosVendidos;
     }
 
-    public void setProductosVendidos(ArrayList<Producto> productosVendidos) {
+    public void setProductosVendidos(List<Producto> productosVendidos) {
         this.productosVendidos = productosVendidos;
     }
 

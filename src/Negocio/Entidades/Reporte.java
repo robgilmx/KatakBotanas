@@ -18,19 +18,19 @@ public class Reporte {
     private int id;
     private String tipo;
     private String nombreCliente;
-    private List<Producto> productosVendidos;
     private Date fechaRegistro;
+    private List<Producto> productosVendidos;
     private Date fechaPedido;
     
     public Reporte(
             String nombreCliente, 
-            List<Producto> productosVendidos, 
             Date fechaRegistro, 
+            List<Producto> productosVendidos, 
             Date fechaPedido
     ) {
         this.nombreCliente = nombreCliente;
-        this.productosVendidos = productosVendidos;
         this.fechaRegistro = fechaRegistro;
+        this.productosVendidos = productosVendidos;
         this.fechaPedido = fechaPedido;
         this.tipo = PEDIDO;
     }

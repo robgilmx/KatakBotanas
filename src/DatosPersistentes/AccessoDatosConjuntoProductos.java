@@ -5,29 +5,29 @@
  */
 package DatosPersistentes;
 
-import Negocio.Entidades.Producto;
+import Negocio.Entidades.ConjuntoProductos;
+import Negocio.Entidades.Enums.EstadoConjuntoProductos;
+import Negocio.Entidades.Reporte;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
-
-
 
 /**
  *
  * @author DEMON
  */
-public class AcessoDatosProductos extends AccesoDatos<Producto>{
-     
-    public List<Producto> getPorNombre(String inputNombre) {
-        String NOMBRE_COLUMNA = "nombre";
-        List<Producto> productoExistente = null;
+public class AccessoDatosConjuntoProductos extends AccesoDatos<ConjuntoProductos>{
+   
+    public List<Reporte> getPorEstado(EstadoConjuntoProductos inputEstado) {
+        String NOMBRE_COLUMNA = "estado";
+        List<Reporte> reporteExistente = null;
         
         try {
             iniciarSesion();
-            String searchSentence = "SELECT * FROM productos WHERE " + NOMBRE_COLUMNA + " REGEXP"
-                    + "'^" + inputNombre + "'";
+            String searchSentence = "SELECT * FROM conjuntos WHERE " + NOMBRE_COLUMNA + " REGEXP"
+                    + "'^" + inputEstado.getEstado()+ "'";
             Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
-            productoExistente = query.list();
+            reporteExistente = query.list();
         } catch (HibernateException excepcion) {
             handleHibernateException(excepcion);
             throw excepcion;
@@ -35,11 +35,6 @@ public class AcessoDatosProductos extends AccesoDatos<Producto>{
             terminarSesion();
         }
         
-        return productoExistente;
-    }
-    
-    @Override
-    protected Class getTipoClase() {
-        return Producto.class;
+        return reporteExistente;
     }
 }

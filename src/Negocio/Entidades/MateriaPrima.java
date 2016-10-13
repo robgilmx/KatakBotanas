@@ -5,6 +5,8 @@
  */
 package Negocio.Entidades;
 
+import Negocio.Entidades.Enums.UnidadMedida;
+
 /**
  *
  * @author DEMON

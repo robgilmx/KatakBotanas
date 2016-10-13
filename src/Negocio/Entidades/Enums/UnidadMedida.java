@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Negocio.Entidades;
+package Negocio.Entidades.Enums;
 
 /**
  *
@@ -22,7 +22,9 @@ public enum UnidadMedida {
         this.nombre = nombre;
     }
     
-    public String getNombre() {
+    public String getNombreUnidadMedida() {
         return nombre;
     }
+    
+    
 }

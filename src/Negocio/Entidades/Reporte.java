@@ -5,6 +5,7 @@
  */
 package Negocio.Entidades;
 
+import Negocio.Entidades.Enums.TipoReporte;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,37 +14,35 @@ import java.util.Date;
  * @author DEMON
  */
 public class Reporte {
-    private final String PEDIDO = "pedido";
-    private final String VENTA = "venta";
     private int id;
-    private String tipo;
+    private TipoReporte tipo;
     private String nombreCliente;
-    private Date fechaRegistro;
+    private Date fechaCreacion;
     private List<ConjuntoProductos> productosVendidos;
     private Date fechaPedido;
     
     public Reporte(
             String nombreCliente, 
-            Date fechaRegistro, 
+            Date fechaCreacion, 
             List<ConjuntoProductos> productosVendidos, 
             Date fechaPedido
     ) {
         this.nombreCliente = nombreCliente;
-        this.fechaRegistro = fechaRegistro;
+        this.fechaCreacion = fechaCreacion;
         this.productosVendidos = productosVendidos;
         this.fechaPedido = fechaPedido;
-        this.tipo = PEDIDO;
+        this.tipo = TipoReporte.PEDIDO;
     }
 
     public Reporte(
             Cliente cliente, 
             List<ConjuntoProductos> productosVendidos, 
-            Date fechaRegistro
+            Date fehaCreacion
     ) {
         this.nombreCliente = cliente.getNombre();
         this.productosVendidos = productosVendidos;
-        this.fechaRegistro = fechaRegistro;
-        this.tipo = VENTA;
+        this.fechaCreacion = fehaCreacion;
+        this.tipo = TipoReporte.VENTA;
     }
 
     public int getId() {
@@ -55,10 +54,10 @@ public class Reporte {
     }
 
     public String getTipo() {
-        return tipo;
+        return tipo.getTipo();
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoReporte tipo) {
         this.tipo = tipo;
     }
 
@@ -78,12 +77,12 @@ public class Reporte {
         this.productosVendidos = productosVendidos;
     }
 
-    public Date getFechaRegistro() {
-        return fechaRegistro;
+    public Date getFechaCreacion() {
+        return fechaCreacion;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public Date getFechaPedido() {

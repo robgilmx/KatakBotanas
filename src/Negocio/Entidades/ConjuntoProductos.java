@@ -5,6 +5,8 @@
  */
 package Negocio.Entidades;
 
+import Negocio.Entidades.Enums.EstadoConjuntoProductos;
+
 /**
  *
  * @author DEMON
@@ -13,12 +15,15 @@ public class ConjuntoProductos {
     private int id;
     private Producto producto;
     private int cantidad;
+    private EstadoConjuntoProductos estado;
 
     public ConjuntoProductos(
-            Producto producto, 
+            Producto producto,
+            EstadoConjuntoProductos estado,
             int cantidad
     )  {
         this.producto = producto;
+        this.estado = estado;
         this.cantidad = cantidad;
     }
 
@@ -45,5 +50,14 @@ public class ConjuntoProductos {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    public EstadoConjuntoProductos getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoConjuntoProductos estado) {
+        this.estado = estado;
+    }
+    
     
 }

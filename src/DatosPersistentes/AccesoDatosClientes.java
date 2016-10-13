@@ -6,10 +6,10 @@
 package DatosPersistentes;
 
 import Negocio.Entidades.Cliente;
-import java.util.Date;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.criterion.SimpleExpression;
 
@@ -17,21 +17,21 @@ import org.hibernate.criterion.SimpleExpression;
  *
  * @author DEMON
  */
-public class AccesoDatosClientes extends AccesoDatos<Object>  {
+public class AccesoDatosClientes extends AccesoDatos<Cliente>  {
 
-    public List<Cliente> getPorNombre(String nombre) {
-        String COLUMN_NAME = "nombre";
+    public List<Cliente> getPorNombre(String inputNombre) {
+        String NOMBRE_COLUMNA = "nombre";
         List<Cliente> clienteExistente = null;
         
         try {
             iniciarSesion();
-            Criteria criterio = sesion.createCriteria(getTipoClase());
-            SimpleExpression restriccion = Restrictions.eq(COLUMN_NAME, nombre);
-            clienteExistente = criterio.add(restriccion).list();
-            System.out.println(clienteExistente.size());
-        } catch (HibernateException excepcion) {
-            handleHibernateException(excepcion);
-            throw excepcion;
+            String searchSentence = "SELECT * FROM clientes WHERE " + NOMBRE_COLUMNA + " REGEXP"
+                    + "'^" + inputNombre + "'";
+            Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
+            clienteExistente = query.list();
+        } catch (HibernateException exception) {
+            handleHibernateException(exception);
+            throw exception;
         } finally {
             terminarSesion();
         }

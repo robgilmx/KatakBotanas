@@ -6,8 +6,8 @@
 package Negocio.Operaciones;
 
 import Negocio.Entidades.Cliente;
-import Negocio.Entidades.ConjuntoProductos;
-import Negocio.Entidades.Enums.EstadoConjuntoProd;
+import Negocio.Entidades.CantidadProd;
+import Negocio.Entidades.Enums.EstadoCantidadProd;
 import Negocio.Entidades.Producto;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -21,9 +21,8 @@ import java.util.List;
 public class RegistradorVenta {
     private List<Cliente> ListaClientes; 
     private List<Producto> ListaProductos;
-    private List<ConjuntoProductos> ListaConjuntoProductos;
+    private List<CantidadProd> ListaConjuntoProductos;
     private AdminProd adminProd;
-    private AdminConjuntoProd adminConjuntoProd; 
     private AdminClientes adminClientes;
     private Date fechaActual;
     
@@ -43,17 +42,17 @@ public class RegistradorVenta {
         return adminClientes.getListaClientes();
     }
     
-    public void CrearConjuntoProd(int cantidad, Producto producto){
-        ConjuntoProductos conjuntoProductos = new ConjuntoProductos(producto, EstadoConjuntoProd.VENDIDO, cantidad);
-        adminConjuntoProd.crearConjuntoProd(conjuntoProductos);
+    public void AgregarCantidadProd(int cantidad, Producto producto){
+        CantidadProd nuevoConjuntoProductos = new CantidadProd(producto, EstadoCantidadProd.VENDIDO, cantidad);
+        
     }
     
-    public void EditarConjuntoProd(ConjuntoProductos conjuntoProductos){
-        adminConjuntoProd.editarConjuntoProd(conjuntoProductos);
+    public void EditarCantProd(CantidadProd conjuntoProductos){
+        //adminConjuntoProd.editarConjuntoProd(conjuntoProductos);
     }
     
-    public void EliminarConjuntoProd(ConjuntoProductos conjuntoProductos){
-        adminConjuntoProd.editarConjuntoProd(conjuntoProductos);
+    public void EliminarConjuntoProd(CantidadProd conjuntoProductos){
+        //adminConjuntoProd.editarConjuntoProd(conjuntoProductos);
     }
     
 }

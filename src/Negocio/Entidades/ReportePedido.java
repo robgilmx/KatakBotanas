@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Negocio.Entidades;
+
+import Negocio.Entidades.Enums.TipoReporte;
+import java.util.Date;
+import java.util.List;
+
+/**
+ *
+ * @author DEMON
+ */
+public class ReportePedido extends Reporte{
+    
+    
+    public ReportePedido(
+            String nombreCliente, 
+            Date fechaCreacion, 
+            List<CantidadProd> productosVendidos, 
+            Date fechaPedido
+    ) {
+        this.nombreComprador = nombreCliente;
+        this.fechaCreacion = fechaCreacion;
+        this.productosVendidos = productosVendidos;
+        this.fechaPedido = fechaPedido;
+        this.tipo = TipoReporte.PEDIDO;
+    }
+}

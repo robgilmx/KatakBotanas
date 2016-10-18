@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/AdminClientes.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/AdminConjuntoProd.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/RegistradorVenta.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/GeneradorSesiones.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/AdminProd.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Vista/vistaRegistrarVentas.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatosConjuntoProd.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/Reporte.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatosProd.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatos.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/ConjuntoProductos.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

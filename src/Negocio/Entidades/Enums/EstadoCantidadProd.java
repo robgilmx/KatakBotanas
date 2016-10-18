@@ -9,13 +9,13 @@ package Negocio.Entidades.Enums;
  *
  * @author DEMON
  */
-public enum EstadoConjuntoProd {
+public enum EstadoCantidadProd {
     VENDIDO("Vendido"),
     EN_INVENTARIO("En inventario");
     
     private final String estado;
 
-    private EstadoConjuntoProd(
+    private EstadoCantidadProd(
             String estado
     ) {
         this.estado = estado;

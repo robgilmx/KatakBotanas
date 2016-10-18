@@ -14,36 +14,17 @@ import java.util.Date;
  * @author DEMON
  */
 public class Reporte {
-    private int id;
-    private TipoReporte tipo;
-    private String nombreCliente;
-    private Date fechaCreacion;
-    private List<ConjuntoProductos> productosVendidos;
-    private Date fechaPedido;
-    
-    public Reporte(
-            String nombreCliente, 
-            Date fechaCreacion, 
-            List<ConjuntoProductos> productosVendidos, 
-            Date fechaPedido
-    ) {
-        this.nombreCliente = nombreCliente;
-        this.fechaCreacion = fechaCreacion;
-        this.productosVendidos = productosVendidos;
-        this.fechaPedido = fechaPedido;
-        this.tipo = TipoReporte.PEDIDO;
-    }
+    protected int id;
+    protected TipoReporte tipo;
+    protected String nombreComprador;
+    protected Date fechaCreacion;
+    protected List<CantidadProd> productosVendidos;
+    protected Date fechaPedido;
 
-    public Reporte(
-            Cliente cliente, 
-            List<ConjuntoProductos> productosVendidos, 
-            Date fehaCreacion
-    ) {
-        this.nombreCliente = cliente.getNombre();
-        this.productosVendidos = productosVendidos;
-        this.fechaCreacion = fehaCreacion;
-        this.tipo = TipoReporte.VENTA;
-    }
+
+    
+
+  
 
     public int getId() {
         return id;
@@ -61,19 +42,19 @@ public class Reporte {
         this.tipo = tipo;
     }
 
-    public String getNombreCliente() {
-        return nombreCliente;
+    public String getNombreComprador() {
+        return nombreComprador;
     }
 
-    public void setNombreCliente(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
+    public void setNombreComprador(String nombreCliente) {
+        this.nombreComprador = nombreCliente;
     }
 
-    public List<ConjuntoProductos> getProductosVendidos() {
+    public List<CantidadProd> getProdVendidos() {
         return productosVendidos;
     }
 
-    public void setProductosVendidos(List<ConjuntoProductos> productosVendidos) {
+    public void setProdVendidos(List<CantidadProd> productosVendidos) {
         this.productosVendidos = productosVendidos;
     }
 

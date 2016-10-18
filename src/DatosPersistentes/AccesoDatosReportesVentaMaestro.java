@@ -9,7 +9,7 @@ package DatosPersistentes;
 import Negocio.Entidades.Reporte;
 import Negocio.Entidades.CantidadProd;
 import Negocio.Entidades.Enums.EstadoCantidadProd;
-import Negocio.Entidades.ReporteCliente;
+import Negocio.Entidades.ReporteVenta;
 import java.util.Date;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -22,7 +22,7 @@ import org.hibernate.criterion.SimpleExpression;
  *
  * @author DEMON
  */
-public class AccesoDatosReportesClienteMaestro extends AccesoDatos<Reporte>{
+public class AccesoDatosReportesVentaMaestro extends AccesoDatos<Reporte>{
     
     public List<Reporte> getPorFechaCreacion(Date fechaCreacion) {
         String NOMBRE_COLUMNA = "fecha_creacion";

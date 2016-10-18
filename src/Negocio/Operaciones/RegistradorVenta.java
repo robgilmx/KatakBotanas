@@ -26,7 +26,7 @@ public class RegistradorVenta {
     private AdminProd adminProd;
     private AdminClientes adminClientes;
     private Date fechaActual;
-    private AdminReportesCliente adminReportes;
+    private AdminReportesVenta adminReportes;
     
     
 

@@ -5,30 +5,30 @@
  */
 package Negocio.Operaciones;
 
-import DatosPersistentes.AccesoDatosReportesClienteDetalles;
-import DatosPersistentes.AccesoDatosReportesClienteMaestro;
+import DatosPersistentes.AccesoDatosReportesVentaDetalles;
+import DatosPersistentes.AccesoDatosReportesVentaMaestro;
 import Negocio.Entidades.CantidadProd;
 import Negocio.Entidades.Reporte;
-import Negocio.Entidades.ReporteCliente;
+import Negocio.Entidades.ReporteVenta;
 import java.util.List;
 /**
  *
  * @author DEMON
  */
-class AdminReportesCliente {
-        private AccesoDatosReportesClienteMaestro accesoDatosRepClienteM;
-        private AccesoDatosReportesClienteDetalles accesoDatosRepClienteD;
+class AdminReportesVenta {
+        private AccesoDatosReportesVentaMaestro accesoDatosRepVentaM;
+        private AccesoDatosReportesVentaDetalles accesoDatosRepVentaD;
     
     public void AgregarCantidadProd(CantidadProd cantidadProd){
-        accesoDatosRepClienteD.insertar(cantidadProd);
+        accesoDatosRepVentaD.insertar(cantidadProd);
     }
     
     public void EditarCantidadProd(CantidadProd cantidadProd){
-        accesoDatosRepClienteD.modificar(cantidadProd);
+        accesoDatosRepVentaD.modificar(cantidadProd);
     }
     
     public void BorrarCantidadProd(CantidadProd cantidadProd){
-        accesoDatosRepClienteD.borrar(cantidadProd);
+        accesoDatosRepVentaD.borrar(cantidadProd);
     }
     // TBI
     //public List<CantidadProd> getListaCantidadProdPorIDReporte(ReporteCliente reportecliente) {
@@ -38,6 +38,6 @@ class AdminReportesCliente {
     //}
     
     public List<Reporte> getListaReportes() {
-        return accesoDatosRepClienteM.getLista();
+        return accesoDatosRepVentaM.getLista();
     }
 }

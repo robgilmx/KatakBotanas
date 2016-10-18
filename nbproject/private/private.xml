@@ -4,14 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/ReporteCliente.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Recursos/Hibernate/Clientes.hbm.xml</file>
             <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/RegistradorVenta.java</file>
+            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatosReportesClienteDetalles.java</file>
             <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/AdminProd.java</file>
+            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Operaciones/AdminReportesCliente.java</file>
             <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/Reporte.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/Producto.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/MateriaPrima.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/CantidadProd.java</file>
-            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatosReportesCliente.java</file>
+            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatos.java</file>
+            <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/DatosPersistentes/AccesoDatosReportesClienteMaestro.java</file>
             <file>file:/C:/Users/DEMON/Documents/NetBeansProjects/KatakBotanas/src/Negocio/Entidades/ReportePedido.java</file>
         </group>
     </open-files>

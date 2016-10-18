@@ -14,13 +14,13 @@ import java.util.Date;
  *
  * @author DEMON
  */
-public class Reporte {
+public abstract class Reporte {
     protected int id;
     protected TipoReporte tipo;
     protected String nombreComprador;
     protected Date fechaCreacion;
     protected List<CantidadProd> productosVendidos;
-    protected Date fechaPedido;
+    
 
 
     
@@ -67,13 +67,7 @@ public class Reporte {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Date getFechaPedido() {
-        return fechaPedido;
-    }
-
-    public void setFechaPedido(Date fechaPedido) {
-        this.fechaPedido = fechaPedido;
-    }
+  
     
     
 }

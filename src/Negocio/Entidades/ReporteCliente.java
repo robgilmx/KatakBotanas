@@ -14,12 +14,14 @@ import java.util.List;
  * @author DEMON
  */
 public class ReporteCliente extends Reporte {
+    Cliente cliente;
     
     public ReporteCliente(
             Cliente cliente, 
             List<CantidadProd> productosVendidos, 
             Date fehaCreacion
     ) {
+        this.cliente = cliente;
         this.nombreComprador = cliente.getNombre();
         this.productosVendidos = productosVendidos;
         this.fechaCreacion = fehaCreacion;

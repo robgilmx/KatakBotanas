@@ -5,6 +5,7 @@
  */
 package Negocio.Operaciones;
 
+import DatosPersistentes.AccesoDatosClientes;
 import Negocio.Entidades.Cliente;
 import Negocio.Entidades.CantidadProd;
 import Negocio.Entidades.Enums.EstadoCantidadProd;
@@ -25,6 +26,7 @@ public class RegistradorVenta {
     private AdminProd adminProd;
     private AdminClientes adminClientes;
     private Date fechaActual;
+    private AdminReportesCliente adminReportes;
     
     
 
@@ -46,11 +48,7 @@ public class RegistradorVenta {
         CantidadProd nuevoConjuntoProductos = new CantidadProd(producto, EstadoCantidadProd.VENDIDO, cantidad);
         
     }
-    
-    public void EditarCantProd(CantidadProd conjuntoProductos){
-        //adminConjuntoProd.editarConjuntoProd(conjuntoProductos);
-    }
-    
+     
     public void EliminarConjuntoProd(CantidadProd conjuntoProductos){
         //adminConjuntoProd.editarConjuntoProd(conjuntoProductos);
     }

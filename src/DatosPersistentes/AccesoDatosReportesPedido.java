@@ -8,6 +8,8 @@ package DatosPersistentes;
 
 import Negocio.Entidades.Enums.TipoReporte;
 import Negocio.Entidades.Reporte;
+import Negocio.Entidades.CantidadProd;
+import Negocio.Entidades.Enums.EstadoCantidadProd;
 import java.util.Date;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -20,7 +22,7 @@ import org.hibernate.criterion.SimpleExpression;
  *
  * @author DEMON
  */
-public class AccesoDatosReportesCliente extends AccesoDatos<Reporte>{
+public class AccesoDatosReportesPedido extends AccesoDatos<Reporte>{
     
     public List<Reporte> getPorFechaCreacion(Date fechaCreacion) {
         String NOMBRE_COLUMNA = "fecha_creacion";
@@ -85,5 +87,45 @@ public class AccesoDatosReportesCliente extends AccesoDatos<Reporte>{
     @Override
     protected Class getTipoClase() {
         return Reporte.class;
+    }
+    
+    public List<CantidadProd> getCantidadPorEstado(EstadoCantidadProd inputEstado) {
+        String NOMBRE_COLUMNA = "estado";
+        List<CantidadProd> conjuntoProductosExistente = null;
+        
+        try {
+            iniciarSesion();
+            String SentenciaBusqueda = "SELECT * FROM conjuntos WHERE " + NOMBRE_COLUMNA + " REGEXP"
+                    + "'^" + inputEstado.getEstado()+ "'";
+            Query query = sesion.createSQLQuery(SentenciaBusqueda).addEntity(getTipoClase());
+            conjuntoProductosExistente = query.list();
+        } catch (HibernateException excepcion) {
+            handleHibernateException(excepcion);
+            throw excepcion;
+        } finally {
+            terminarSesion();
+        }
+        
+        return conjuntoProductosExistente;
+    }
+    
+    public List<CantidadProd> getCantidadPorNombreProd(String inputNombreProducto) {
+        String NOMBRE_COLUMNA = "nombre_producto";
+        List<CantidadProd> conjuntoProductosExistente = null;
+        
+        try {
+            iniciarSesion();
+            String searchSentence = "SELECT * FROM conjuntos WHERE " + NOMBRE_COLUMNA + " REGEXP"
+                    + "'^" + inputNombreProducto+ "'";
+            Query query = sesion.createSQLQuery(searchSentence).addEntity(getTipoClase());
+            conjuntoProductosExistente = query.list();
+        } catch (HibernateException excepcion) {
+            handleHibernateException(excepcion);
+            throw excepcion;
+        } finally {
+            terminarSesion();
+        }
+        
+        return conjuntoProductosExistente;
     }
 }

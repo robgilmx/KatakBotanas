@@ -14,18 +14,27 @@ import java.util.List;
  * @author DEMON
  */
 public class ReportePedido extends Reporte{
+    private Date fechaPedido;
     
     
     public ReportePedido(
-            String nombreCliente, 
+            String nombreComprador, 
             Date fechaCreacion, 
             List<CantidadProd> productosVendidos, 
             Date fechaPedido
     ) {
-        this.nombreComprador = nombreCliente;
+        this.nombreComprador = nombreComprador;
         this.fechaCreacion = fechaCreacion;
         this.productosVendidos = productosVendidos;
         this.fechaPedido = fechaPedido;
         this.tipo = TipoReporte.PEDIDO;
+    }
+    
+    public Date getFechaPedido() {
+        return fechaPedido;
+    }
+
+    public void setFechaPedido(Date fechaPedido) {
+        this.fechaPedido = fechaPedido;
     }
 }

@@ -20,7 +20,7 @@ import org.hibernate.criterion.SimpleExpression;
  *
  * @author DEMON
  */
-public class AccesoDatosReportes extends AccesoDatos<Reporte>{
+public class AccesoDatosReportesCliente extends AccesoDatos<Reporte>{
     
     public List<Reporte> getPorFechaCreacion(Date fechaCreacion) {
         String NOMBRE_COLUMNA = "fecha_creacion";

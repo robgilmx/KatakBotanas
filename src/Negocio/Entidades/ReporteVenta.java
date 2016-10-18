@@ -13,10 +13,10 @@ import java.util.List;
  *
  * @author DEMON
  */
-public class ReporteCliente extends Reporte {
+public class ReporteVenta extends Reporte {
     Cliente cliente;
     
-    public ReporteCliente(
+    public ReporteVenta(
             Cliente cliente, 
             List<CantidadProd> productosVendidos, 
             Date fehaCreacion

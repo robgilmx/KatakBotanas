@@ -22,7 +22,7 @@ import org.hibernate.criterion.SimpleExpression;
  *
  * @author DEMON
  */
-public class AccesoDatosReportesClienteDetalles extends AccesoDatos<CantidadProd>{
+public class AccesoDatosReportesVentaDetalles extends AccesoDatos<CantidadProd>{
     
    
     

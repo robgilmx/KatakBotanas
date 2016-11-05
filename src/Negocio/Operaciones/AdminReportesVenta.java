@@ -30,13 +30,17 @@ class AdminReportesVenta {
     public void BorrarCantidadProd(CantidadProd cantidadProd){
         accesoDatosRepVentaD.borrar(cantidadProd);
     }
-    // TBI
-    //public List<CantidadProd> getListaCantidadProdPorIDReporte(ReporteCliente reportecliente) {
-       // return accesoDatosRepClienteD.getCantidadProdPorNombreCliente( 
-       //         reportecliente.getNombreComprador()
-       // );
-    //}
     
+   /*  
+    Esta es una rutina que se implementara mas adelante cuando el modulo de
+    Reportes se encuentre completo
+    
+    public List<CantidadProd> getListaCantidadProdPorIDReporte(ReporteCliente reportecliente) {
+        return accesoDatosRepClienteD.getCantidadProdPorNombreCliente( 
+                reportecliente.getNombreComprador()
+        );
+    }
+    */
     public List<Reporte> getListaReportes() {
         return accesoDatosRepVentaM.getLista();
     }

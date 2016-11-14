@@ -20,12 +20,7 @@ public abstract class Reporte {
     protected String nombreComprador;
     protected Date fechaCreacion;
     protected List<CantidadProd> productosVendidos;
-    
 
-
-    
-
-  
 
     public int getId() {
         return id;
